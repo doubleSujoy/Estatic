@@ -26,6 +26,8 @@ def sendPing():
 @app.route("/api/post/chat/infinite-gpt", methods=['POST'])
 def jdk():
     try:
+        if not request.is_json:
+            return jsonify({"serverError": False, "clientError": True, "msg": "use application/jaon in request header to complete the request"})
         data = request.json  # Assuming JSON data is sent in the request body
         q = data.get('query')  # Assuming 'port_number' is the key in the JSON data
         if q is None:
