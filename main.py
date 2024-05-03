@@ -22,11 +22,12 @@ def jdkrk():
 @app.route("/api/post/chat/infinite-gpt", methods=['POST'])
 def jdk():
     data = request.json  # Assuming JSON data is sent in the request body
-    q = data.get('q')  # Assuming 'port_number' is the key in the JSON data
+    q = data.get('query')  # Assuming 'port_number' is the key in the JSON data
     if q is None:
-        return "invalid"
+        return jsonify({"serverError": False, "clientError": True, "msg": "query is not provided in request body!"})
     else:
-        return fun183(q)
+        result = fun183(q)
+        return jsonify({"serverError": False, "clientError": False, "msg": result})
 
 if __name__ == '__main__':
     # Run the app
