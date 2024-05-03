@@ -16,8 +16,8 @@ def pingmeio():
 
 @app.route("/test")
 def jdkrk():
-    param_value = request.args.get('param')
-    return f'The value of "param" is: {param_value}'
+    query = request.args.get('q')
+    return fun183(query)
 
 @app.route("/test-post", methods=['POST'])
 def jdk():
