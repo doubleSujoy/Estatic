@@ -19,11 +19,14 @@ def jdkrk():
     query = request.args.get('q')
     return fun183(query)
 
-@app.route("/test-post", methods=['POST'])
+@app.route("/api/post/chat/infinite-gpt", methods=['POST'])
 def jdk():
     data = request.json  # Assuming JSON data is sent in the request body
     q = data.get('q')  # Assuming 'port_number' is the key in the JSON data
-    return f"your query is {q}"
+    if q is None:
+        return "invalid"
+    else:
+        return fun183(q)
 
 if __name__ == '__main__':
     # Run the app
