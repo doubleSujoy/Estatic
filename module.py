@@ -3,9 +3,9 @@ from gradio_client import Client
 ChatGptClient = Client(crystal99/test-gpt)
 
 
-def giiyel7hosx():
+def giiyel7hosx(q):
   result = ChatGptClient.predict(
-		message="",
+		message=f"{q}",
 		request="",
 		param_3=512,
 		param_4=0.7,
