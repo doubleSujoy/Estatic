@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from module import bosohwf84kv as fun832
 from module import giiyel7hosx as fun183
 # Create a Flask app
@@ -15,9 +15,9 @@ def pingmeio():
 
 @app.route("/test")
 def jdkrk():
-    app.logger.info(fun832())
-    app.logger.info(fun183())
-    return "True"
+    param_value = request.args.get('param')
+    return f'The value of "param" is: {param_value}'
+
 
 
 if __name__ == '__main__':
