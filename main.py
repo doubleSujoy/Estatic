@@ -15,9 +15,8 @@ def pingmeio():
 
 @app.route("/test")
 def jdkrk():
-    print(fun832())
-    print(fun183())
-    print("hi")
+    app.logger.info(fun832())
+    app.logger.info(fun183())
     return "True"
 
 
