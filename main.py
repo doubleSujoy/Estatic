@@ -18,6 +18,10 @@ def pingmeio():
 def jdkrk():
     query = request.args.get('q')
     return fun183(query)
+@app.route("/api/post/chat/ping")
+def sendPing():
+    return "Success"
+
 
 @app.route("/api/post/chat/infinite-gpt", methods=['POST'])
 def jdk():
@@ -30,7 +34,9 @@ def jdk():
             result = fun183(q)
             return jsonify({"serverError": False, "clientError": False, "msg": result})
     except Exception as e:
+        app.logger.error(e)
         return jsonify({"serverError": True, "clientError": "Maybe", "msg": "Somthing Went Wrong Please Contact with sujoy via email sujoyk211@gmail.com"})
+
 
 
 if __name__ == '__main__':
