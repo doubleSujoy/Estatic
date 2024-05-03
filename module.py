@@ -1,6 +1,6 @@
 from gradio_client import Client
-
-ChatGptClient = Client(crystal99/test-gpt)
+hf_tok = os.environ.get('hf_key', None)
+ChatGptClient = Client(os.environ.get('infiChatModel', None), hf_token = hf_tok)
 
 
 def giiyel7hosx(q):
