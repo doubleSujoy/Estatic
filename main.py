@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from module import bosohwf84kv as fun832
 from module import giiyel7hosx as fun183
 # Create a Flask app
@@ -18,7 +18,11 @@ def jdkrk():
     param_value = request.args.get('param')
     return f'The value of "param" is: {param_value}'
 
-
+@app.route("/test-post", methods=['POST'])
+def jdk():
+    data = request.json  # Assuming JSON data is sent in the request body
+    q = data.get('q')  # Assuming 'port_number' is the key in the JSON data
+    return f"your query is {q}"
 
 if __name__ == '__main__':
     # Run the app
