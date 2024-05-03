@@ -1,9 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from module import bosohwf84kv as fun832
 from module import giiyel7hosx as fun183
 # Create a Flask app
 app = Flask(__name__)
-
+CORS(app, resources={r"/*": {"origins": r"https?://([^.]+\.)?rapidapi\.com"}})
 # Define a route for the homepage
 @app.route('/')
 def home():
