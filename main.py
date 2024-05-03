@@ -31,7 +31,7 @@ def jdk():
 
         try:
             if not request.json:
-                return return jsonify({"serverError": False, "clientError": True, "msg": "A valid json request body is not provided!"})
+                return jsonify({"serverError": False, "clientError": True, "msg": "A valid json request body is not provided!"})
          
             data = request.json  # Assuming JSON data is sent in the request body
         except Exception as e:
