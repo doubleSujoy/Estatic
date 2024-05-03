@@ -11,13 +11,13 @@ def home():
 
 @app.route("/ping")
 def pingmeio():
-    return True
+    return "True"
 
 @app.route("/test")
 def jdkrk():
     print(fun832())
     print(fun183())
-    return True
+    return "True"
 
 
 if __name__ == '__main__':
