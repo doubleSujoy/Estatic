@@ -5,8 +5,8 @@ from module import giiyel7hosx as fun183
 # Create a Flask app
 app = Flask(__name__)
 CORS(app, resources={r"/ping": {"origins": r"*"}})
-CORS(app, resources={r"/api/tool-sphere/code-gen": {"origins": r"https://tool-sphere.github.io"}})
-CORS(app, resources={r"/*": {"origins": r"https?://([^.]+\.)?rapidapi\.com"}})
+CORS(app, resources={r"/tool-sphere/api/code-gen": {"origins": r"https://tool-sphere.github.io"}})
+CORS(app, resources={r"/api*": {"origins": r"https?://([^.]+\.)?rapidapi\.com"}})
 # Define a route for the homepage
 @app.route('/')
 def home():
@@ -57,7 +57,7 @@ def jdk():
 
 
 
-@app.route("/api/tool-sphere/code-gen", methods=['POST'])
+@app.route("/tool-sphere/api/code-gen", methods=['POST'])
 def idoen():
     try:
         if not request.is_json:
