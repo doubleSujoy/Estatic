@@ -57,7 +57,7 @@ def jdk():
 
 
 
-@app.route("/api/tool-sphere/code-gen")
+@app.route("/api/tool-sphere/code-gen", methods=['POST'])
 def idoen():
     try:
         if not request.is_json:
