@@ -2,7 +2,7 @@ import os
 from gradio_client import Client
 hf_tok = os.environ.get('hf_key', None)
 ChatGptClient = Client(os.environ.get('infiChatModel', None), hf_token = hf_tok)
-tool-sphere-code-model = Client("crystal99/tool-sphere-code-gen", hf_token = hf_tok)
+tool_sphere_code_model = Client("crystal99/tool-sphere-code-gen", hf_token = hf_tok)
 
 def giiyel7hosx(q):
   result = ChatGptClient.predict(
@@ -16,7 +16,7 @@ def giiyel7hosx(q):
   return result
 
 def bosohwf84kv(q):
-  result = client.predict(
+  result = tool_sphere_code_model.predict(
 		message=f"{q}",
 		request="You are a friendly Chatbot.",
 		param_3=2100,
