@@ -20,9 +20,9 @@ def jdkrk():
     return fun183(query)
 
 @app.route("/test2")
-def jdkrk():
-    query = request.args.get('q')
-    return fun832(query)
+def jdkvkrk():
+    querye = request.args.get('q')
+    return fun832(querye)
     
 @app.route("/api/post/chat/ping")
 def sendPing():
