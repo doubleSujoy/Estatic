@@ -16,7 +16,7 @@ def giiyel7hosx(q):
       return result
 
 def bosohwf84kv(q):
-      result = tool_sphere_code_model.predict(
+      result2 = tool_sphere_code_model.predict(
 		message=f"{q}",
 		request="You are a friendly Chatbot.",
 		param_3=2100,
@@ -24,5 +24,5 @@ def bosohwf84kv(q):
 		param_5=0.95,
 		api_name="/chat"
       )
-      return result
+      return result2
 
