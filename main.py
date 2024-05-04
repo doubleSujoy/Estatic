@@ -4,6 +4,8 @@ from module import bosohwf84kv as fun832
 from module import giiyel7hosx as fun183
 # Create a Flask app
 app = Flask(__name__)
+CORS(app, resources={r"/ping": {"origins": r"*"}})
+CORS(app, resources={r"/api/tool-sphere/code-gen": {"origins": r"https://tool-sphere.github.io"}})
 CORS(app, resources={r"/*": {"origins": r"https?://([^.]+\.)?rapidapi\.com"}})
 # Define a route for the homepage
 @app.route('/')
