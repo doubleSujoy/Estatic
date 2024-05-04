@@ -19,7 +19,7 @@ def bosohwf84kv():
   result = client.predict(
 		message="Hello!!",
 		request="You are a friendly Chatbot.",
-		param_3=512,
+		param_3=2100,
 		param_4=0.7,
 		param_5=0.95,
 		api_name="/chat"
