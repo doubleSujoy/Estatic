@@ -15,9 +15,9 @@ def giiyel7hosx(q):
 )
   return result
 
-def bosohwf84kv():
+def bosohwf84kv(q):
   result = client.predict(
-		message="Hello!!",
+		message=f"{q}",
 		request="You are a friendly Chatbot.",
 		param_3=2100,
 		param_4=0.7,
