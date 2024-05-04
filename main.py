@@ -18,6 +18,12 @@ def pingmeio():
 def jdkrk():
     query = request.args.get('q')
     return fun183(query)
+
+@app.route("/test2")
+def jdkrk():
+    query = request.args.get('q')
+    return fun832(query)
+    
 @app.route("/api/post/chat/ping")
 def sendPing():
     return "Success"
