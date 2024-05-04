@@ -57,6 +57,33 @@ def jdk():
 
 
 
+@app.route("/api/tool-sphere/code-gen")
+def idoen():
+    try:
+        if not request.is_json:
+            return jsonify({"serverError": False, "clientError": True, "msg": "use application/json in request header to complete the request"})
+
+        try:
+            if not request.json:
+                return jsonify({"serverError": False, "clientError": True, "msg": "A valid json body is not provided!"})
+         
+            data = request.json  # Assuming JSON data is sent in the request body
+        except Exception as e:
+            return jsonify({"serverError": False, "clientError": True, "msg": "A valid json body is not provided!"})
+        
+        q = data.get('query')  # Assuming 'port_number' is the key in the JSON data
+        if q is None:
+            return jsonify({"serverError": False, "clientError": True, "msg": "query is not provided in request body!"})
+        else:
+            result = fun832(q)
+            return jsonify({"serverError": False, "clientError": False, "msg": result})
+    except Exception as e:
+        app.logger.error(e)
+        return jsonify({"serverError": True, "clientError": "Maybe", "msg": "Somthing Went Wrong Please Contact with website owner via contact us page"})
+        
+    
+
+
 if __name__ == '__main__':
     # Run the app
     app.run(debug=True,host='0.0.0.0',port=3000)
