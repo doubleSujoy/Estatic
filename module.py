@@ -7,7 +7,7 @@ ChatGptClient = Client(os.environ.get('infiChatModel', None), hf_token = hf_tok)
 def giiyel7hosx(q):
   result = ChatGptClient.predict(
 		message=f"{q}",
-		request="you are a chat bot",
+		request="You are a friendly Chatbot.",
 		param_3=512,
 		param_4=0.7,
 		param_5=0.95,
