@@ -46,10 +46,12 @@ def jdk():
             return jsonify({"serverError": False, "clientError": True, "msg": "A valid json body is not provided!"})
         
         q = data.get('query')  # Assuming 'port_number' is the key in the JSON data
+        sysQ = data.get("sysMsg") or "You are a friendly Chatbot."
+        
         if q is None:
             return jsonify({"serverError": False, "clientError": True, "msg": "query is not provided in request body!"})
         else:
-            result = fun183(q)
+            result = fun183(q, sysQ)
             return jsonify({"serverError": False, "clientError": False, "msg": result})
     except Exception as e:
         app.logger.error(e)
