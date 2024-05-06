@@ -4,7 +4,7 @@ hf_tok = os.environ.get('hf_key', None)
 ChatGptClient = Client(os.environ.get('infiChatModel', None), hf_token = hf_tok)
 tool_sphere_code_model = Client("crystal99/tool-sphere-code-gen", hf_token = hf_tok)
 
-def giiyel7hosx(q, sm):
+def giiyel7hosx(q, sm="You are a friendly Chatbot."):
       result = ChatGptClient.predict(
 		message=f"{q}",
 		request=f"{sm}",
