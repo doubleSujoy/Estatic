@@ -3,6 +3,8 @@ from gradio_client import Client
 hf_tok = os.environ.get('hf_key', None)
 ChatGptClient = Client(os.environ.get('infiChatModel', None), hf_token = hf_tok)
 tool_sphere_code_model = Client("crystal99/tool-sphere-code-gen", hf_token = hf_tok)
+imageGen = Client("crystal99/stabilityai-stable-diffusion-xl-base-1.0")
+
 
 def giiyel7hosx(q, sm="You are a friendly Chatbot."):
       result = ChatGptClient.predict(
