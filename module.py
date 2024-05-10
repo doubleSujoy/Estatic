@@ -67,7 +67,7 @@ def imageGenPix(q):
 		param_0=f"{q}",
 		api_name="/predict"
     )
-    response = requests.get(f"https://crystal99-runwayml-stable-diffusion-v1-5.hf.space/file={result5}")
+    response = requests.get(f"https://crystal99-b2bmgmt-swizad-pokemon-trainer-sprite-pixelart.hf.space/file={result5}")
     if response.status_code == 200:
 	    base64_image = base64.b64encode(response.content)
 	    base64_image_str = base64_image.decode('utf-8')
