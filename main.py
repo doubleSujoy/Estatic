@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from module import bosohwf84kv as fun832
 from module import giiyel7hosx as fun183
+from module import imgGenv1 as image_gen_v1
 # Create a Flask app
 app = Flask(__name__)
 CORS(app, resources={r"/ping": {"origins": r"*"}})
@@ -82,7 +83,38 @@ def idoen():
     except Exception as e:
         app.logger.error(e)
         return jsonify({"serverError": True, "clientError": "Maybe", "msg": "Somthing Went Wrong Please Contact with website owner via contact us page"})
+
+
+@app.route("/api/post/img/ping")
+def sendImagePing():
+    return "Success"
+
+
+@app.route("/api/post/img/image_gen_v1", methods=['POST'])
+def jdkkdy():
+    try:
+        if not request.is_json:
+            return jsonify({"serverError": False, "clientError": True, "msg": "use application/json in request header to complete the request"})
+
+        try:
+            if not request.json:
+                return jsonify({"serverError": False, "clientError": True, "msg": "A valid json body is not provided!"})
+         
+            data = request.json  # Assuming JSON data is sent in the request body
+        except Exception as e:
+            return jsonify({"serverError": False, "clientError": True, "msg": "A valid json body is not provided!"})
         
+        q = data.get('query')  # Assuming 'port_number' is the key in the JSON data
+        
+        if q is None:
+            return jsonify({"serverError": False, "clientError": True, "msg": "query is not provided in request body!"})
+        else:
+            result = image_gen_v1(q)
+            return jsonify({"serverError": False, "clientError": False, "imageData": result, "type": "base64"})
+    except Exception as e:
+        app.logger.error(e)
+        return jsonify({"serverError": True, "clientError": "Maybe", "msg": "Somthing Went Wrong Please Contact with sujoy via email sujoyk211@gmail.com"})
+                           
     
 
 
