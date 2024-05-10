@@ -26,6 +26,12 @@ def jdkrk():
 def jdkvkrk():
     querye = request.args.get('q')
     return fun832(querye)
+
+@app.route("/test3")
+def jdkvkhkrk():
+    querye = request.args.get('q')
+    return image_gen_v1(querye)
+
     
 @app.route("/api/post/chat/ping")
 def sendPing():
