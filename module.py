@@ -33,7 +33,10 @@ def bosohwf84kv(q):
       return result2
 
 def imgGenv1(q):
-	result3 = "some"
+	result3 = imageGenVone.predict(
+		param_0=f"{q}",
+		api_name="/predict"
+        )
 	response = requests.get(f"https://crystal99-runwayml-stable-diffusion-v1-5.hf.space")
         if response.status_code == 200:
 		base64_image = base64.b64encode(response.content)
