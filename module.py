@@ -53,7 +53,7 @@ def imgGenDetai(q):
 		param_0=f"{q}",
 		api_name="/predict"
     )
-    response = requests.get(f"https://crystal99-runwayml-stable-diffusion-v1-5.hf.space/file={result4}")
+    response = requests.get(f"https://crystal99-stabilityai-stable-diffusion-xl-base-1-0.hf.space/file={result4}")
     if response.status_code == 200:
 	    base64_image = base64.b64encode(response.content)
 	    base64_image_str = base64_image.decode('utf-8')
