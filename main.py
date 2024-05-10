@@ -3,6 +3,9 @@ from flask_cors import CORS
 from module import bosohwf84kv as fun832
 from module import giiyel7hosx as fun183
 from module import imgGenv1 as image_gen_v1
+from module import imgGenDetai as image_gen_v2
+from module import imageGenPix as image_gen_px
+
 # Create a Flask app
 app = Flask(__name__)
 CORS(app, resources={r"/ping": {"origins": r"*"}})
@@ -32,6 +35,18 @@ def jdkvkhkrk():
     querye = request.args.get('q')
     return image_gen_v1(querye)
 
+
+@app.route("/test4")
+def jdkvkhhdkejrk():
+    querye = request.args.get('q')
+    return image_gen_v2(querye)
+
+
+@app.route("/test5")
+def jdkhrvkhkruek():
+    querye = request.args.get('q')
+    return image_gen_px(querye)
+    
     
 @app.route("/api/post/chat/ping")
 def sendPing():
