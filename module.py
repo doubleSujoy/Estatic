@@ -31,19 +31,20 @@ def bosohwf84kv(q):
 		api_name="/chat"
       )
       return result2
+	
 
 def imgGenv1(q):
-	result3 = imageGenVone.predict(
+    result3 = imageGenVone.predict(
 		param_0=f"{q}",
 		api_name="/predict"
-        )
-	response = requests.get(f"https://crystal99-runwayml-stable-diffusion-v1-5.hf.space/file=${result3}")
-        if response.status_code == 200:
-		base64_image = base64.b64encode(response.content)
-		base64_image_str = base64_image.decode('utf-8')
-		return f"data:image/jpeg;base64,{base64_image_str}"
-	else:
-		return "Failed to fetch Image"
+    )
+    response = requests.get(f"https://crystal99-runwayml-stable-diffusion-v1-5.hf.space/file=${result3}")
+    if response.status_code == 200:
+        base64_image = base64.b64encode(response.content)
+	base64_image_str = base64_image.decode('utf-8')
+	return f"data:image/jpeg;base64,{base64_image_str}"
+    else:
+	return "Failed to fetch Image"
 
 
 
