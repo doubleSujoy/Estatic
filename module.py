@@ -1,4 +1,6 @@
 import os
+import requests
+
 from gradio_client import Client
 hf_tok = os.environ.get('hf_key', None)
 ChatGptClient = Client(os.environ.get('infiChatModel', None), hf_token = hf_tok)
