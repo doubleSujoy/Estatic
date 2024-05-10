@@ -44,7 +44,7 @@ def imgGenv1(q):
 	    base64_image_str = base64_image.decode('utf-8')
 	    return f"data:image/jpeg;base64,{base64_image_str}"
     else:
-	return "Failed to fetch Image"
+	    return "Failed to fetch Image"
 
 
 
