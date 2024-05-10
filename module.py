@@ -32,13 +32,14 @@ def bosohwf84kv(q):
       return result2
 
 def imgGenv1(q):
-	result = "some"
+	result3 = "some"
 	response = requests.get(f"https://crystal99-runwayml-stable-diffusion-v1-5.hf.space")
         if response.status_code == 200:
-		image_data = response.content
+		return response.content
 	else:
 		return "Failed to fetch Image"
-	return result
+
+
 
 def imgGenDetai(q):
 	result = "some"
