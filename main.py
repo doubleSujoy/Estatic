@@ -135,7 +135,60 @@ def jdkkdy():
     except Exception as e:
         app.logger.error(e)
         return jsonify({"serverError": True, "clientError": "Maybe", "msg": "Somthing Went Wrong Please Contact with sujoy via email sujoyk211@gmail.com"})
-                           
+
+
+@app.route("/api/post/img/image_gen_v2", methods=['POST'])
+def jdkkdy():
+    try:
+        if not request.is_json:
+            return jsonify({"serverError": False, "clientError": True, "msg": "use application/json in request header to complete the request"})
+
+        try:
+            if not request.json:
+                return jsonify({"serverError": False, "clientError": True, "msg": "A valid json body is not provided!"})
+         
+            data = request.json  # Assuming JSON data is sent in the request body
+        except Exception as e:
+            return jsonify({"serverError": False, "clientError": True, "msg": "A valid json body is not provided!"})
+        
+        q = data.get('query')  # Assuming 'port_number' is the key in the JSON data
+        
+        if q is None:
+            return jsonify({"serverError": False, "clientError": True, "msg": "query is not provided in request body!"})
+        else:
+            result = image_gen_v2(q)
+            return jsonify({"serverError": False, "clientError": False, "imageData": result, "type": "base64"})
+    except Exception as e:
+        app.logger.error(e)
+        return jsonify({"serverError": True, "clientError": "Maybe", "msg": "Somthing Went Wrong Please Contact with sujoy via email sujoyk211@gmail.com"})
+
+
+
+@app.route("/api/post/img/image_gen_pixle_art", methods=['POST'])
+def jdkkdy():
+    try:
+        if not request.is_json:
+            return jsonify({"serverError": False, "clientError": True, "msg": "use application/json in request header to complete the request"})
+
+        try:
+            if not request.json:
+                return jsonify({"serverError": False, "clientError": True, "msg": "A valid json body is not provided!"})
+         
+            data = request.json  # Assuming JSON data is sent in the request body
+        except Exception as e:
+            return jsonify({"serverError": False, "clientError": True, "msg": "A valid json body is not provided!"})
+        
+        q = data.get('query')  # Assuming 'port_number' is the key in the JSON data
+        
+        if q is None:
+            return jsonify({"serverError": False, "clientError": True, "msg": "query is not provided in request body!"})
+        else:
+            result = image_gen_px(q)
+            return jsonify({"serverError": False, "clientError": False, "imageData": result, "type": "base64"})
+    except Exception as e:
+        app.logger.error(e)
+        return jsonify({"serverError": True, "clientError": "Maybe", "msg": "Somthing Went Wrong Please Contact with sujoy via email sujoyk211@gmail.com"})
+    
     
 
 
