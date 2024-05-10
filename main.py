@@ -138,7 +138,7 @@ def jdkkdy():
 
 
 @app.route("/api/post/img/image_gen_v2", methods=['POST'])
-def jdkkdy():
+def jdzkdy():
     try:
         if not request.is_json:
             return jsonify({"serverError": False, "clientError": True, "msg": "use application/json in request header to complete the request"})
@@ -165,7 +165,7 @@ def jdkkdy():
 
 
 @app.route("/api/post/img/image_gen_pixle_art", methods=['POST'])
-def jdkkdy():
+def jdmbkdy():
     try:
         if not request.is_json:
             return jsonify({"serverError": False, "clientError": True, "msg": "use application/json in request header to complete the request"})
