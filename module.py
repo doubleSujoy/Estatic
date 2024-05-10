@@ -67,7 +67,7 @@ def imgGenDetai(q):
 
 
 def imageGenPix(q):
-    result5 = imageGenVone.predict(
+    result5 = pixleImageGen.predict(
 		param_0=f"{q}",
 		api_name="/predict"
     )
