@@ -29,3 +29,15 @@ def bosohwf84kv(q):
       )
       return result2
 
+def imgGenv1(q):
+	result = "some"
+	return result
+
+def imgGenDetai(q):
+	result = "some"
+	return result
+
+def imageGenPix(q):
+	result = "some"
+	return result
+
