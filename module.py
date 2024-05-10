@@ -1,5 +1,6 @@
 import os
 import requests
+import base64
 
 from gradio_client import Client
 hf_tok = os.environ.get('hf_key', None)
@@ -35,7 +36,9 @@ def imgGenv1(q):
 	result3 = "some"
 	response = requests.get(f"https://crystal99-runwayml-stable-diffusion-v1-5.hf.space")
         if response.status_code == 200:
-		return response.content
+		base64_image = base64.b64encode(response.content)
+		base64_image_str = base64_image.decode('utf-8')
+		return f""
 	else:
 		return "Failed to fetch Image"
 
