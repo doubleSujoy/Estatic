@@ -49,7 +49,7 @@ def imgGenv1(q):
 
 
 def imgGenDetai(q):
-    result4 = imageGenVone.predict(
+    result4 = imageGen.predict(
 		param_0=f"{q}",
 		api_name="/predict"
     )
