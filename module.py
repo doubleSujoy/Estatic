@@ -38,7 +38,7 @@ def imgGenv1(q):
         if response.status_code == 200:
 		base64_image = base64.b64encode(response.content)
 		base64_image_str = base64_image.decode('utf-8')
-		return f""
+		return f"data:image/jpeg;base64,{base64_image_str}"
 	else:
 		return "Failed to fetch Image"
 
