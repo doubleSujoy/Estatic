@@ -76,7 +76,7 @@ def imageGenPix(q):
     if response.status_code == 200:
 	    base64_image = base64.b64encode(response.content)
 	    base64_image_str = base64_image.decode('utf-8')
-	    return json.dumps({"dataSrc": f"data:image/jpeg;base64,{base64_image_str}", "binarySrc": f"{response.content}"});
+	    return f"data:image/jpeg;base64,{base64_image_str}"
     else:
 	    return "Failed to fetch Image"
 	    
