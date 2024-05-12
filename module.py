@@ -1,6 +1,7 @@
 import os
 import requests
 import base64
+import json
 
 from gradio_client import Client
 hf_tok = os.environ.get('hf_key', None)
@@ -75,7 +76,7 @@ def imageGenPix(q):
     if response.status_code == 200:
 	    base64_image = base64.b64encode(response.content)
 	    base64_image_str = base64_image.decode('utf-8')
-	    return f"data:image/jpeg;base64,{base64_image_str}"
+	    return json.dumps({"dataSrc": f"data:image/jpeg;base64,{base64_image_str}", "binarySrc": f"{response.content}"});
     else:
 	    return "Failed to fetch Image"
 	    
