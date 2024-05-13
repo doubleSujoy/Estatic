@@ -27,6 +27,19 @@ def giiyel7hosx(q, sm="You are a friendly Chatbot."):
       )
       return result
 
+
+def llama3chat(q, sm="You are a friendly Chatbot."):
+      result = llama3chat.predict(
+		message=f"{q}",
+		request=f"{sm}",
+		param_3=512,
+		param_4=0.7,
+		param_5=0.95,
+		api_name="/chat"
+      )
+      return result
+
+
 def bosohwf84kv(q):
       result2 = tool_sphere_code_model.predict(
 		message=f"{q}",
