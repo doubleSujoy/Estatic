@@ -10,6 +10,14 @@ tool_sphere_code_model = Client("crystal99/tool-sphere-code-gen", hf_token = hf_
 imageGen = Client("crystal99/stabilityai-stable-diffusion-xl-base-1.0", hf_token = hf_tok)
 pixleImageGen = Client("crystal99/B2BMGMT_sWizad-pokemon-trainer-sprite-pixelart", hf_token = hf_tok)
 imageGenVone = Client("crystal99/runwayml-stable-diffusion-v1-5", hf_token = hf_tok);
+llama3 = [
+        {
+	        "name": "xlient1"
+        },
+        {
+		"name": "xlient2"
+	}
+]
 
 headers = {
         "Authorization": f"Bearer {hf_tok}"
