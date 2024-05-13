@@ -5,7 +5,7 @@ from module import giiyel7hosx as fun183
 from module import imgGenv1 as image_gen_v1
 from module import imgGenDetai as image_gen_v2
 from module import imageGenPix as image_gen_px
-
+from module import llama3_chat
 # Create a Flask app
 app = Flask(__name__)
 CORS(app, resources={r"/ping": {"origins": r"*"}})
@@ -100,7 +100,7 @@ def chatLlama3():
         if q is None:
             return jsonify({"serverError": False, "clientError": True, "msg": "query is not provided in request body!"})
         else:
-            result = fun183(q, sysQ)
+            result = llama3_chat(q, sysQ)
             return jsonify({"serverError": False, "clientError": False, "msg": result})
     except Exception as e:
         app.logger.error(e)
