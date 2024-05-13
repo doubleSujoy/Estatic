@@ -80,6 +80,34 @@ def jdk():
         return jsonify({"serverError": True, "clientError": "Maybe", "msg": "Somthing Went Wrong Please Contact with sujoy via email sujoyk211@gmail.com"})
 
 
+@app.route("/api/post/chat/llama3", methods=['POST'])
+def chatLlama3():
+    try:
+        if not request.is_json:
+            return jsonify({"serverError": False, "clientError": True, "msg": "use application/json in request header to complete the request"})
+
+        try:
+            if not request.json:
+                return jsonify({"serverError": False, "clientError": True, "msg": "A valid json body is not provided!"})
+         
+            data = request.json  # Assuming JSON data is sent in the request body
+        except Exception as e:
+            return jsonify({"serverError": False, "clientError": True, "msg": "A valid json body is not provided!"})
+        
+        q = data.get('prompt')  # Assuming 'port_number' is the key in the JSON data
+        sysQ = data.get("system_prompt") or "You are a friendly Chatbot."
+        
+        if q is None:
+            return jsonify({"serverError": False, "clientError": True, "msg": "query is not provided in request body!"})
+        else:
+            result = fun183(q, sysQ)
+            return jsonify({"serverError": False, "clientError": False, "msg": result})
+    except Exception as e:
+        app.logger.error(e)
+        return jsonify({"serverError": True, "clientError": "Maybe", "msg": "Somthing Went Wrong Please Contact with sujoy via email sujoyk211@gmail.com"})
+
+
+
 
 @app.route("/tool-sphere/api/code-gen", methods=['POST'])
 def idoen():
