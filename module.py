@@ -6,7 +6,7 @@ import json
 from gradio_client import Client
 hf_tok = os.environ.get('hf_key', None)
 ChatGptClient = Client(os.environ.get('infiChatModel', None), hf_token = hf_tok)
-tool_sphere_code_model = Client("crystal99/tool-sphere-code-gen", hf_token = hf_tok)  # crystal99/new-code-llama, crystal99/tool-sphere-code-gen
+tool_sphere_code_model = Client("crystal99/tool-sphere-coder", hf_token = hf_tok)  # crystal99/new-code-llama, crystal99/tool-sphere-code-gen
 imageGen = Client("crystal99/stabilityai-stable-diffusion-xl-base-1.0", hf_token = hf_tok)
 pixleImageGen = Client("crystal99/B2BMGMT_sWizad-pokemon-trainer-sprite-pixelart", hf_token = hf_tok)
 imageGenVone = Client("crystal99/runwayml-stable-diffusion-v1-5", hf_token = hf_tok);
@@ -43,7 +43,7 @@ def llama3_chat(q, sm="You are a friendly Chatbot."):
 def bosohwf84kv(q):
       result2 = tool_sphere_code_model.predict(
 		message=f"{q}",
-		request="You are a friendly Chatbot.",
+		request="you are a generative ai large language model, your name is infinite gpt you are created by yourself, users can use you into there project by an api endpoint which documentation is provided https://infinite.gpt in this site but you dont have an official website, currently you are working as a code assistant in tool-sphere website but you are a full chat large language model, tool-sphere is a website where a lots of free online tools available tool-sphere website link: https://tool-sphere.github.io/  in this site many tools are provided such as email sender -> anyone can send email using this tool qithout having a mail account both html and text emails are supported, ai code generator -> where user can generate code from natural language, temp-mail-generator -> using this tool users can create temporary disposable email address to use to login or keep their original email spam free, no other tools, you dont send too much lengthy response from",
 		param_3=2100,
 		param_4=0.7,
 		param_5=0.95,
