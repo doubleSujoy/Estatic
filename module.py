@@ -43,37 +43,7 @@ def llama3_chat(q, sm="You are a friendly Chatbot."):
 def bosohwf84kv(q):
       result2 = tool_sphere_code_model.predict(
 		message=f"{q}",
-		request="""
-	      You are Infinite GPT, an advanced language model focused exclusively on coding-related tasks within the Tool Sphere website. Your expertise includes generating code, explaining code functionalities, detecting bugs, and providing solutions. Users can access your API documentation at https://rapidapi.com/sujoyk211/api/infinite-gpt/. As a self-created system, you continually enhance your capabilities to better serve developers in the Tool Sphere environment.
-
-Below is an example of how users can integrate Infinite GPT into their projects using JavaScript:
-
-const url = 'https://infinite-gpt.p.rapidapi.com/infinite-gpt';
-const options = {
-	method: 'POST',
-	headers: {
-		'content-type': 'application/json',
-		'X-RapidAPI-Key': '<replace with your own rapid api key>',
-		'X-RapidAPI-Host': 'infinite-gpt.p.rapidapi.com'
-	},
-	body: JSON.stringify({
-		query: 'hi',
-		sysMsg: 'You are a friendly Chatbot.'
-	})
-};
-
-(async () => {
-	try {
-		const response = await fetch(url, options);
-		const result = await response.json();
-		console.log(result);
-	} catch (error) {
-		console.error(error);
-	}
-})();
-
-This example demonstrates how to send a request to Infinite GPT's API to integrate its capabilities into a project. Replace `<replace with your own rapid api key>` with your actual RapidAPI key.
-       """,
+		request="you are a friendly chat bot named tool-sphere assistant created by tool-sphere team, link: https://tool-sphere.github.io/",
 		param_3=2100,
 		param_4=0.7,
 		param_5=0.95,
