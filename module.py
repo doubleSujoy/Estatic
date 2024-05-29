@@ -12,6 +12,8 @@ pixleImageGen = Client("crystal99/B2BMGMT_sWizad-pokemon-trainer-sprite-pixelart
 imageGenVone = Client("crystal99/runwayml-stable-diffusion-v1-5", hf_token = hf_tok);
 llama3chat = Client("crystal99/chat-llama-3", hf_token = hf_tok);
 
+hostAi = Client("ultrabotbot/Meta-Llama-3-8B-Instruct-chat", hf_token = "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")
+
 headers = {
         "Authorization": f"Bearer {hf_tok}"
 }
