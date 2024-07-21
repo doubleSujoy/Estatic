@@ -9,7 +9,7 @@ from module import llama3_chat
 # Create a Flask app
 app = Flask(__name__)
 CORS(app, resources={r"/ping": {"origins": r"*"}})
-CORS(app, resources={r"/tool-sphere/api/code-gen": {"origins": r"https://tool-sphere.github.io"}})
+CORS(app, resources={r"/tool-sphere/api/code-gen": {"origins": [r"https://tool-sphere.github.io", r"https://tool-sphere.onrender.com"]}})
 CORS(app, resources={r"/api*": {"origins": r"https?://([^.]+\.)?rapidapi\.com"}})
 # Define a route for the homepage
 @app.route('/')
