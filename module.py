@@ -9,7 +9,7 @@ ChatGptClient = Client("crystal99/test-gpt", hf_token = hf_tok)
 tool_sphere_code_model = Client("crystal99/tool-sphere-code-gen", hf_token = hf_tok)  # crystal99/new-code-llama, crystal99/tool-sphere-code-gen
 imageGen = Client("crystal99/stabilityai-stable-diffusion-xl-base-1.0", hf_token = hf_tok)
 pixleImageGen = Client("crystal99/B2BMGMT_sWizad-pokemon-trainer-sprite-pixelart", hf_token = hf_tok)
-imageGenVone = Client("crystal99/runwayml-stable-diffusion-v1-5", hf_token = hf_tok);
+#imageGenVone = Client("crystal99/runwayml-stable-diffusion-v1-5", hf_token = hf_tok);
 llama3chat = Client("crystal99/chat-llama-3", hf_token = hf_tok);
 
 hostAi = Client("ultrabotbot/Meta-Llama-3-8B-Instruct-chat", hf_token = "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")
@@ -55,7 +55,7 @@ def bosohwf84kv(q):
 	
 
 def imgGenv1(q):
-    result3 = imageGenVone.predict(
+    """result3 = imageGenVone.predict(
 		param_0=f"{q}",
 		api_name="/predict"
     )
@@ -64,8 +64,8 @@ def imgGenv1(q):
 	    base64_image = base64.b64encode(response.content)
 	    base64_image_str = base64_image.decode('utf-8')
 	    return f"data:image/jpeg;base64,{base64_image_str}"
-    else:
-	    return "Failed to fetch Image"
+    else:"""
+    return "Failed to fetch Image"
 
 
 
