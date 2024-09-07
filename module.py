@@ -35,7 +35,7 @@ def llama3_chat(q, sm="You are a friendly Chatbot."):
 		message=f"{q}",
 		system_message=f"{sm}",
 		max_tokens=2000,
-		temperature=0.7
+		temperature=0.7,
 		top_p=0.95,
 		api_name="/chat"
       )
