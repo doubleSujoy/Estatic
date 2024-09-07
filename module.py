@@ -21,7 +21,7 @@ headers = {
 def giiyel7hosx(q, sm="You are a friendly Chatbot."):
       result = ChatGptClient.predict(
 		message=f"{q}",
-		request=f"{sm}",
+		system_message=f"{sm}",
 		param_3=2000,
 		param_4=0.7,
 		param_5=0.95,
@@ -45,7 +45,7 @@ def llama3_chat(q, sm="You are a friendly Chatbot."):
 def bosohwf84kv(q):
       result2 = tool_sphere_code_model.predict(
 		message=f"{q}",
-		request="you are a friendly chat bot named tool-sphere assistant created by tool-sphere team, your purpose is to help people with their code problem and generate code link: https://tool-sphere.github.io/",
+		system_message="you are a friendly chat bot named tool-sphere assistant created by tool-sphere team, your purpose is to help people with their code problem and generate code link: https://tool-sphere.github.io/",
 		param_3=2100,
 		param_4=0.7,
 		param_5=0.95,
