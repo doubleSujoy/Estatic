@@ -85,7 +85,7 @@ def imgGenDetai(q):
 
 
 def imageGenPix(q):
-    result5 = pixleImageGen.predict(
+    """result5 = pixleImageGen.predict(
 		param_0=f"{q}",
 		api_name="/predict"
     )
@@ -95,5 +95,6 @@ def imageGenPix(q):
 	    base64_image_str = base64_image.decode('utf-8')
 	    return f"data:image/jpeg;base64,{base64_image_str}"
     else:
-	    return "Failed to fetch Image"
+	    return "Failed to fetch Image""""
+     return "Failed to fetch Image"
 	    
