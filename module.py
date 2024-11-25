@@ -8,7 +8,7 @@ hf_tok = os.environ.get('hf_key', None)
 ChatGptClient = Client("crystal99/test-gpt", hf_token = hf_tok)
 tool_sphere_code_model = Client("crystal99/tool-sphere-code-gen", hf_token = hf_tok)  # crystal99/new-code-llama, crystal99/tool-sphere-code-gen
 imageGen = Client("crystal99/stabilityai-stable-diffusion-xl-base-1.0", hf_token = hf_tok)
-pixleImageGen = Client("crystal99/B2BMGMT_sWizad-pokemon-trainer-sprite-pixelart", hf_token = hf_tok)
+#pixleImageGen = Client("crystal99/B2BMGMT_sWizad-pokemon-trainer-sprite-pixelart", hf_token = hf_tok)
 #imageGenVone = Client("crystal99/runwayml-stable-diffusion-v1-5", hf_token = hf_tok);
 llama3chat = Client("crystal99/chat-llama-3", hf_token = hf_tok);
 
